@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Testing JavaScript!</title>
+    <style>
+        body {
+    font-family: monospace;
+    background-color: #292826;
+    color: #f9d342;
+    }
+    #submitButton {
+        background-color: #d4d2a1;
+        color: #2f2e2c;
+        margin-top: 50px;
+        padding: 6px 24px;
+        text-align: center;
+        font-size: 12px;
+    }
+    #submitButton:hover {
+        color: #f9d342;
+        background-color: #2e2c28;
+    }
+    input,
+    select,
+    textarea {
+        background-color: #2f2e2c;
+        color: #d4d2a1;
+        font-weight: 700;
+        border: #292826;
+    }
+    #regressionDiv,
+    #cipherDiv,
+    #primesDiv {
+        border: solid #33322f;
+        padding: 5px;
+        width: 510px; 
+        height: 800px;
+        float: left; 
+        margin: 100px 50px 0px 50px;
+    }
+    #regressionResult,
+    #cipherResult,
+    #primeResult {
+        background-color: #2f2e2c;
+        color: #d4d2a1;
+        border: solid #292826;
+        font-weight: 700;
+    }
+    #submitButton.regressionSubmit,
+    #submitButton.primesSubmit {
+        margin-top: 240px;
+    }
+    #submitButton.cipherSubmit {
+        margin-top: 50px;
+    }
+    #regressionResult,
+    #primeResult {
+        margin-top: 20px;
+    }
+    #cipherResult {
+        margin-top: 26px;
+    }
+    textarea,
+    #cipherResult {
+        max-width: 500px;
+        min-width: 420px;
+    }
+    textarea {
+        max-height: 167px;
+    }
+    #cipherResult {
+        max-height: 290px;
+    }
+    </style>
+</head>
+<body>
+    <div id="allDivs">
+        <div id="regressionDiv">
+            <h3>Linear Regression</h3>
+            <p>Seperate values by a comma.</p>
+            <br>
+            <form id="regForm">
+                <p>Enter x-values</p>
+                <input id="xValues" type="text" value=150,160,165,175,179,187><br>
+                <p>Enter y-values</p>
+                <input id="yValues" type="text" value=2.24,2.48,2.50,3.03,3.35,3.32><br>
+                <input id="submitButton" class="regressionSubmit" type="button" onclick="runRegression()" value="Submit">
+                <p style="font-size:11px;font-style:italic;">It will take a few seconds to calculate..</p>
+            </form>
+        </div>
+        <div id="cipherDiv">
+            <h3>Cipher</h3>
+            <p>Simple Ceasar Cipher</p>
+            <br>
+            <form>
+                <p>Choose a Cipher Mode</p>
+                <select id="selectMode" name="mode">
+                    <option value="encrypt">Encrypt</option>
+                    <option value="decrypt">Decrypt</option>
+                    <option value="bruteforce">Bruteforce</option>
+                </select>
+                <p>Select an Integer key</p>
+                <input id="cipherKey" type="number" value=12>
+                <br><br>
+                <textarea id="cipherMessage" name="message" rows="10" cols="60">
+Enter message here..
+                </textarea> 
+                <input id="submitButton" class="cipherSubmit" type="button" onclick="runCeasarCipher()" value="Submit">
+            </form>
+        </div>
+        <div id="primesDiv">
+            <h3>Primes</h3>
+            <p>Simple Prime Functions</p>
+            <br>
+            <form>
+                <p>Choose a Function</p>
+                <select id="selectPrime" name="mode">
+                    <option value="nPrime">Is n Prime?</option>
+                    <option value="nthPrime">n'th Prime</option>
+                    <option value="primeFactor">Largest Prime Factor of n</option>
+                </select>
+                <p>Select Integer Value of n</p>
+                <input id="primeN" type="number" value=42><br>
+                <input id="submitButton" class="primesSubmit" type="button" onclick="runPrimes()" value="Submit">
+            </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="maths.js"></script>
+</body>
+</html>
