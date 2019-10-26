@@ -180,7 +180,7 @@ linearRegression = (xPoints, yPoints, range=1000) => {
     let outerLimit = 0;
     while (outerLimit < aValues.length) {
         let aCurrent = aValues[outerLimit];
-		console.log(`Run #${outerLimit} out of ${aValues.length}`);
+	console.log(`Run #${outerLimit} out of ${aValues.length}`);
         let innerLimit = 0;
         while (innerLimit < bValues.length) {
             let bCurrent = bValues[innerLimit];
