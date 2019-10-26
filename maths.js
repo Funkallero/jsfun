@@ -25,7 +25,7 @@ runRegression = () => {
     let error = Math.round(result[2]);
 
     // neat up result string if b is negative
-    if ( b < 0) {
+    if ((b < 0 && (error <= 50))) {
         resultString = `The best equation returned with ${error} error(s). That equation is:\n\nf(x) = ${a}x - ${Math.abs(b)}`;
     } else if (((b === 1 && (a === 1) && (error !== 0))) || (error > 50)) {
         resultString = `The best equation could not be determined. The best one\n\nf(x) = ${a}x + ${b}\n\nreturned with ${error} errors. That's not really useful..`;
@@ -180,7 +180,6 @@ linearRegression = (xPoints, yPoints, range=1000) => {
     let outerLimit = 0;
     while (outerLimit < aValues.length) {
         let aCurrent = aValues[outerLimit];
-	console.log(`Run #${outerLimit} out of ${aValues.length}`);
         let innerLimit = 0;
         while (innerLimit < bValues.length) {
             let bCurrent = bValues[innerLimit];
