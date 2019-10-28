@@ -100,6 +100,9 @@ runPrimes = () => {
             result = `No. ${n} is not a Prime Number.`;
         }
 
+    } else if (mode === "fibNumbers") {
+        let nCheck = sumFibNumbersBelowN(n);
+        result = `The sum of Fibonacci numbers below ${n} is: ${nCheck}`;
     } else if (mode === "nthPrime") {
 
         // find the nth prime number
@@ -368,4 +371,18 @@ largestPrimeFactor = n => {
         }
     }
     return prime;
+};
+
+sumFibNumbersBelowN = n => {
+    let sumRes = 1;
+    let n1 = 0;
+    let n2 = 1;
+    let i = n1 + n2;
+    while (i < n) {
+        sumRes += i;
+        n1 = n2;
+        n2 = i;
+        i = n1 + n2;
+    }
+    return sumRes;
 };
